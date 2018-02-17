@@ -3,5 +3,5 @@
 /.settings/
 /.classpath
 /.project
-/WebContent/META-INF/
-/WebContent/WEB-INF/
+/WebContent/META-INF
+!/WebContent/
