@@ -1,7 +1,7 @@
 body{
 	margin:0px;
 	background-repeat-y:no-repeat;
-	background-image:url(body_back.png);
+	background-image:url(res/body_back.png);
 }
 /*#header{*/
 	#header{
@@ -103,10 +103,12 @@ body{
 		#events{
 			position:relative;
 			height:400px;
+			overflow:hidden;
 		}
 		.event_item{
-			position:relative;
+			position:absolute;
 			height:100%;
+			width:100%;
 		}
 		.event_item img{
 			width:100%;

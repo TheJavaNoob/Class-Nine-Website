@@ -1,6 +1,26 @@
-function switchPic(id){
+var events_curr = 1;
+function switchPic(control){
 	"use strict";
-	alert(id);
+	var sel_val = Number(control.text());
+	var sel = $("#event" + control.text());
+	var curr = $("#event" + events_curr);
+	if(sel_val === events_curr){return;}
+	if(sel_val > events_curr){
+		sel.show();
+		sel.css("left", "-100%");
+		curr.animate({left:'100%'}, 1000);
+		sel.animate({left:'0'}, 1000, function(){
+			curr.hide();
+		});
+	}else{
+		sel.show();
+		sel.css("left", "100%");
+		curr.animate({left:'-100%'}, 1000);
+		sel.animate({left:'0'}, 1000, function(){
+			curr.hide();
+		});
+	}
+	events_curr = sel_val;
 }
 $(document).ready(function(){
 	'use strict';
@@ -19,6 +39,6 @@ $(document).ready(function(){
 		$("#head_menu_body").show();
 	});
 	$(".event_controls_item").click(function(){
-		switchPic($(this).text());
+		switchPic($(this));
 	});
 });
