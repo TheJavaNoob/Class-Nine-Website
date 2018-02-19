@@ -56,7 +56,7 @@
 				<div id="pic_main" class="main">
 					<div class="pic_item" id="pic1">
 						<img src="img/pic1.png">
-						<div class="img_mask" style="display: none; top: -100%">
+						<div class="pic_mask" style="display: none; top: -100%">
 							<span>Picture wall, pic No.1</span>
 							<a href="pictures/1.jsp">See more>></a>
 						</div>

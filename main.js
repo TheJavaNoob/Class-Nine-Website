@@ -41,12 +41,12 @@ $(document).ready(function(){
 	$(".event_controls_item").click(function(){
 		switchPic($(this));
 	});
-	$(".img_item").hover(function(){
-		var mask = $(this).children("#pic_mask");
+	$(".pic_item").hover(function(){
+		var mask = $(this).children(".pic_mask");
 		mask.show();
 		mask.animate({top:"0%"}, 500);
 	},function(){
-		var mask = $(this).children("#pic_mask");
+		var mask = $(this).children(".pic_mask");
 		mask.animate({top:"-100%"}, 500, function(){
 			mask.hide();
 		});
