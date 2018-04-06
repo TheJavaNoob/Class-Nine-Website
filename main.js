@@ -1,4 +1,5 @@
 var events_curr = 1;
+var events_all = 2;
 function switchPic(control){
 	"use strict";
 	var sel_val = Number(control.text());
@@ -24,6 +25,13 @@ function switchPic(control){
 }
 $(document).ready(function(){
 	'use strict';
+	setInterval(function(){
+		if(events_curr === events_all){
+			events_curr = 1;
+		}else{
+			
+		}
+	}, 5000);
 	$("#head_menu_items").hover(function(){
 	},function(){
 		$("#head_menu_body").hide();
@@ -50,5 +58,52 @@ $(document).ready(function(){
 		mask.animate({top:"-100%"}, 500, function(){
 			mask.hide();
 		});
+	});
+	$("#login_close").click(function(){
+		$("#login").hide();
+	});
+	$("#login_close").hover(function(){
+		$("#login_close img").attr("src","res/close_activated.png");
+	},function(){
+		$("#login_close img").attr("src","res/close.png");
+	});
+	$("#menu_item1").click(function(){
+		$("#login").show();
+	});
+	$("#login_done").click(function(){
+		if($("#login_username").val() === ""){
+			$("#message p").text("请输入用户名");
+			$("#message").show();
+			setTimeout(function(){$("#message p").hide();}, 2000);
+		}else if($("#login_password").val() === ""){
+			$("#message p").text("请输入密码");
+			$("#message").show();
+			setTimeout(function(){$("#message").hide();}, 2000);
+		}else{
+			$.ajax({
+					type: "GET",
+					url: "Login?username="+$("#login_username").val()+"&password="+$("#login_password").val(),
+					dataType: "text",
+					success: function(data){
+						if(data === "done"){
+							alert("登录成功");
+							location.reload();
+						}else if(data === "pass_err"){
+							$("#message p").text("登录失败，密码错误");
+							$("#message").show();
+							setTimeout(function(){$("#message").hide();}, 2000);
+						}else if(data === "user_err"){
+							$("#message p").text("登录失败，找不到用户名");
+							$("#message").show();
+							setTimeout(function(){$("#message").hide();}, 2000);
+						}
+					},
+					error: function(){
+						$("#message p").text("登录失败，出现错误");
+						$("#message p").show();
+						setTimeout(function(){$("#message p").hide();}, 2000);
+					}
+				});
+		}
 	});
 });

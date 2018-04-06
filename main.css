@@ -3,10 +3,49 @@ body{
 	background-repeat-y:no-repeat;
 	background-image:url(res/body_back.png);
 }
+/*login*/
+	#login{
+		position: fixed;
+		z-index: 500;
+		width: 420px;
+		height: 200px;
+		left: 50%;
+		top:50%;
+		margin-left: -250px;
+		margin-top: -150px;
+	}
+	#login_main{
+		height: 265px;
+		border: solid 1px black;
+	}
+	#login_main table{
+		width: 400px;
+	}
+	#login_main tr{
+		height: 30px;
+	}
+	.login_txt{
+		width:100%;
+	}
+	#login_main p{
+		text-align: right;
+		margin:0px;
+	}
+	#login_main h1{
+		text-align: center;
+		margin: 0px;
+	}
+	#login_done{
+		float: right;
+	}
+	#login_main a{
+		float: right;
+	}
+/*}*/
 /*#header{*/
 	#header{
 		position:fixed;
-		z-index:999;
+		z-index:499;
 		width:100%;
 		height:70px;
 		background:#6cff6c;
@@ -28,7 +67,7 @@ body{
 		top:40px;
 		font-size:20px;
 		font-family:sans-serif;
-		color:#66FFCC;
+		color:#5555FF;
 	}
 	/*#head_menu_top{*/
 		#head_menu_top{
@@ -52,7 +91,7 @@ body{
 	/*#head_menu_body*/
 		#head_menu_body{
 			position:absolute;
-			z-index:999;
+			z-index:499;
 			right:187px;
 			top:35px;
 		}
@@ -88,6 +127,27 @@ body{
 		}
 		.head_menu_item a:hover{
 			background-color:#5555FF;
+		}
+	/*}*/
+	/*#messaage*/
+		#message{
+			position: fixed;
+			left: 50%;
+			top:50%;
+			width: 300px;
+			height:100px;
+			margin-left: -150px;
+			margin-top: -50px;
+			background: #0000AA;
+			box-shadow: 0px 0px 5px 0px #000000;
+			z-index: 501;
+		}
+		#message p{
+			vertical-align: middle;
+			font-size: 20px;
+			width: 100%;
+			text-align: center;
+			color: #FFFFFF;
 		}
 	/*}*/
 /*}*/
@@ -170,7 +230,7 @@ body{
 			width: 100%;
 			height: 100%;
 			background: rgba(0, 0, 0, 0.5);
-			z-index: 999;
+			z-index: 498;
 		}
 		.pic_mask span{
 			position: absolute;
@@ -206,6 +266,8 @@ body{
 	}
 	.title a{
 		float:right;
+		margin-top: 5px;
+		margin-right:5px;
 	}
 	#row4{
 		position:relative;

@@ -10,6 +10,35 @@
 		<link rel="stylesheet" href="main.css" media="screen">
 	</head>
 	<body>
+		<div id="message" style="display: none">
+			<p></p>
+		</div>
+		<div id="login" style="display: none">
+			<div class="title">
+				<p>登录</p>
+				<a id="login_close"><img src="res/close.png"></a>
+			</div>
+			<div class="main" id="login_main">
+				<h1>欢迎来到初一九班官网</h1>
+				<table cellspacing="20">
+					<tr>
+						<td><p>姓名：</p></td>
+						<td><input type="text" id="login_username" class="login_txt"/></td>
+					</tr>
+					<tr>
+						<td><p>密码：</p></td>
+						<td><input type="password" id="login_password" class="login_txt"/></td>
+					</tr>
+				<tr>
+					<td><input type="submit" value="登录" id="login_done"></td>
+					<td>
+						<input type="checkbox" value="自动登录"/>自动登录
+						<a href="accounts.jsp?from=password">找回密码</a>
+					</td>
+				</tr>
+				</table>
+			</div>
+		</div>
 		<div id="header">
 				<div id="head_title">
 					<span id="head_title1">初一九班</span>
@@ -24,7 +53,7 @@
 					<span id="head_menu_body_top_small"></span>
 					<div id="head_menu_items">
 						<div class="head_menu_item">
-							<a href="javascript:;">Sign in</a>
+							<a id="menu_item1">登录</a>
 						</div>
 					</div>
 				</div>
@@ -51,9 +80,12 @@
 			<div id="pictures">
 				<div id="pic_title" class="title">
 					<p>照片墙</p>
-					<a href="pictures.html">更多&gt;&gt;</a>
+					<a href="pictures.jsp">更多&gt;&gt;</a>
 				</div>
 				<div id="pic_main" class="main">
+					<%
+					   for(int i = 0; i < 5; i++){
+					%>
 					<div class="pic_item" id="pic1">
 						<img src="img/pic1.png">
 						<div class="pic_mask" style="display: none; top: -100%">
@@ -61,6 +93,7 @@
 							<a href="pictures/1.jsp">See more>></a>
 						</div>
 					</div>
+					<%}%>
 				</div>
 			</div>
 			<div id="row4">
